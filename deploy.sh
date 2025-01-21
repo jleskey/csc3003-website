@@ -6,4 +6,4 @@ rsync \
     --partial \
     --progress \
     --delete \
-    src/* josleskey@cs.mvnu.edu:/var/www/html/class/csc3003/josleskey/lab3/
+    src/* josleskey@cs.mvnu.edu:/var/www/html/class/csc3003/josleskey/lab5/
