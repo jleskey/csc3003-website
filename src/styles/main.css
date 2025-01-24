@@ -1,3 +1,37 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 img {
     max-width: 100%;
+}
+
+p {
+    line-height: 1.5;
+}
+
+main>header>h1 {
+    color: #380;
+    font-size: 180%;
+}
+
+nav {
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    font-size: 80%;
+    letter-spacing: 2px;
+}
+
+address {
+    font-style: normal;
 }
