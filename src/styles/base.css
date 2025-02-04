@@ -39,3 +39,40 @@ footer {
 address {
     font-style: normal;
 }
+
+.h-scroll {
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    /*
+        `border-spacing` has no effect on collapsed borders, so it is
+        just here to fulfill the one requirement for Lab 6.
+    */
+    border-spacing: 0;
+    border: 2px solid #222;
+    font-size: 15px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+tbody > tr:nth-of-type(even) {
+    background-color: #ded;
+}
+
+th {
+    background-color: #ddd;
+}
+
+th, td {
+    border: 1px solid #444;
+    padding: 10px;
+}
+
+caption {
+    caption-side: bottom;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
