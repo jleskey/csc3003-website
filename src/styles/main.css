@@ -39,3 +39,5 @@ footer {
 address {
     font-style: normal;
 }
+
+@import url('pages.css');
