@@ -57,7 +57,7 @@ table {
     overflow-x: auto;
 }
 
-tbody > tr:nth-of-type(even) {
+tbody>tr:nth-of-type(even) {
     background-color: #ded;
 }
 
@@ -65,7 +65,8 @@ th {
     background-color: #ddd;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #444;
     padding: 10px;
 }
