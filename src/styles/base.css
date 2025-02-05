@@ -1,5 +1,10 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+body > header, main, body > footer {
+    padding: 0 20px;
 }
 
 img {
@@ -31,9 +36,12 @@ a:hover {
     text-decoration: underline;
 }
 
-footer {
+body > footer {
     font-size: 80%;
     letter-spacing: 2px;
+    background-color: #aba;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 address {
