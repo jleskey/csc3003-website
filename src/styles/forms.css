@@ -1,0 +1,47 @@
+form .field, form .controls {
+    margin-bottom: 10px;
+}
+
+label,
+input,
+select,
+textarea {
+    margin: 10px 0;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #bbb;
+}
+
+select, form .controls input {
+    background-color: #eee;
+}
+
+select:hover, form .controls input:hover {
+    background-color: #ccc;
+}
+
+select:active, form .controls input:active {
+    background-color: #aaa;
+}
+
+input:valid, select:valid, textarea:valid {
+    background-color: #f0fff0;
+}
+
+select:valid:hover {
+    background-color: #d0ddd0;
+}
+
+select:valid:active {
+    background-color: #b0bbb0;
+}
+
+form .controls input {
+    display: inline-block;
+}
