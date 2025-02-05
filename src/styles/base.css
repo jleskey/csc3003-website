@@ -7,6 +7,10 @@ body > header, main, body > footer {
     padding: 0 20px;
 }
 
+main {
+    margin-bottom: 20px;
+}
+
 img {
     max-width: 100%;
 }
