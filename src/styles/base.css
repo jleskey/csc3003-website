@@ -1,23 +1,35 @@
+/* Basic structure */
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
 }
 
-body > header, main, body > footer {
+body>header,
+main,
+body>footer {
     padding: 0 20px;
 }
+
+/* Content areas */
 
 main {
     margin-bottom: 20px;
 }
 
-img {
-    max-width: 100%;
+nav {
+    font-weight: bold;
 }
 
-p {
-    line-height: 1.5;
+body>footer {
+    font-size: 80%;
+    letter-spacing: 2px;
+    background-color: #aba;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
+
+/* Headers */
 
 h1 {
     color: #380;
@@ -28,8 +40,10 @@ h2 {
     font-size: 110%;
 }
 
-nav {
-    font-weight: bold;
+/* Content */
+
+p {
+    line-height: 1.5;
 }
 
 a {
@@ -40,21 +54,15 @@ a:hover {
     text-decoration: underline;
 }
 
-body > footer {
-    font-size: 80%;
-    letter-spacing: 2px;
-    background-color: #aba;
-    padding-top: 20px;
-    padding-bottom: 10px;
+img {
+    max-width: 100%;
 }
 
 address {
     font-style: normal;
 }
 
-.h-scroll {
-    overflow-x: auto;
-}
+/* Tables */
 
 table {
     border-collapse: collapse;
@@ -88,4 +96,10 @@ caption {
     padding: 10px;
     font-size: 14px;
     font-weight: bold;
+}
+
+/* Modifiers */
+
+.h-scroll {
+    overflow-x: auto;
 }
