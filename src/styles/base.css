@@ -1,35 +1,125 @@
-/* Basic structure */
+/* Body */
 
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0;
+    padding: 10px 20px;
+    padding-bottom: 0;
+    height: 100vh;
 }
 
-body>header,
-main,
-body>footer {
-    padding: 0 20px;
+/* Basic header */
+
+body>header>img {
+    display: block;
+    margin: auto;
+    max-width: 20%;
 }
 
-/* Content areas */
-
-main {
-    margin-bottom: 20px;
-}
-
-nav {
+body>header>nav {
     font-weight: bold;
 }
+
+/* Menu base */
+
+body>header>nav ul {
+    padding: 0;
+    list-style: none;
+    background-color: #aba;
+    border-radius: 10px;
+}
+
+body>header>nav ul li {
+    display: block;
+    cursor: default;
+    border-radius: 10px;
+}
+
+body>header>nav ul li a,
+body>header>nav ul li button {
+    display: block;
+    background: none;
+    border: none;
+    color: #412;
+    padding: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    border-radius: inherit;
+}
+
+body>header>nav ul li a.active,
+body>header>nav ul li button.active {
+    color: #100;
+    background-color: #898;
+}
+
+body>header>nav ul li:hover>a,
+body>header>nav ul li:hover>button {
+    background-color: #9a9;
+    color: #301;
+    text-decoration: none;
+}
+
+/* Sub-menus */
+
+body>header>nav>ul ul {
+    display: none;
+    position: absolute;
+    background-color: #bcb;
+    box-shadow: 1px 2px 2px #000a;
+}
+
+body>header>nav>ul li:hover>ul {
+    display: block;
+}
+
+body>header>nav ul ul li a,
+body>header>nav ul ul li button {
+    color: #523;
+}
+
+body>header>nav ul ul li a.active,
+body>header>nav ul ul li button.active {
+    color: #200;
+    background-color: #9a9;
+}
+
+body>header>nav ul ul li:hover>a,
+body>header>nav ul ul li:hover>button {
+    color: #412;
+    background-color: #aba;
+}
+
+/* Main menu bar */
+
+body>header>nav>ul {
+    display: flex;
+    justify-content: center;
+}
+
+/* Main content */
+
+main {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+/* Footer */
 
 body>footer {
     font-size: 80%;
     letter-spacing: 2px;
     background-color: #aba;
     padding-top: 20px;
-    padding-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
-/* Headers */
+/* Headings */
 
 h1 {
     color: #380;
