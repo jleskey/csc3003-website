@@ -7,11 +7,10 @@ document.body.addEventListener('click', e => {
     const target = e.target;
 
     if (target instanceof HTMLInputElement || target instanceof HTMLButtonElement) {
-        const type = target.type;
-        if (type === 'submit') {
+        if (target.type === 'submit') {
             const form = target.closest('form');
-            // At this point, we know that a submit button was clicked in a
-            // form. It's time for some action.
+            // At this point, we can determine wehther or not a submit button
+            // was clicked in a form. It's time for some action.
             return !form || validateForm(form);
         }
     }
