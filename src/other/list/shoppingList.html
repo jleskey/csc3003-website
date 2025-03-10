@@ -26,7 +26,49 @@
             </div>
             <div id="addgroup">
                 <button onclick="addItem();">Add Item</button>
-                <input type="text" size="30">
+                <select>
+                    <option value="" disabled selected>Select a service</option>
+                    <optgroup label="Writing and ghostwriting">
+                        <option>Flash fiction</option>
+                        <option>Short story</option>
+                        <option>Novelette</option>
+                        <option>Novella</option>
+                        <option>Novel</option>
+                        <option>Consulting and critique</option>
+                    </optgroup>
+                    <optgroup label="Editing and proofreading">
+                        <option>Flash fiction</option>
+                        <option>Short story</option>
+                        <option>Novelette</option>
+                        <option>Novella</option>
+                        <option>Novel</option>
+                        <option>Consulting and critique</option>
+                    </optgroup>
+                    <optgroup label="Game development">
+                        <option>Basic platformer, pen & paper, etc.</option>
+                        <option>Card game, basic board game, etc.</option>
+                        <option>Complex strategy game, farming simulator, etc.</option>
+                        <option>Large open world physics-based story-driven game</option>
+                        <option>Full-fledged MMORPG</option>
+                        <option>Consulting and critique</option>
+                    </optgroup>
+                    <optgroup label="Website development">
+                        <option>Basic bio and/or links</option>
+                        <option>Basic portfolio</option>
+                        <option>Advanced portfolio</option>
+                        <option>Presentation website</option>
+                        <option>Full website</option>
+                        <option>Consulting and critique</option>
+                    </optgroup>
+                    <optgroup label="Software tool development">
+                        <option>Ad-hoc utility</option>
+                        <option>Trivial custom tool</option>
+                        <option>Competent program</option>
+                        <option>Advanced program</option>
+                        <option>Full software stack</option>
+                        <option>Consulting and critique</option>
+                    </optgroup>
+                </select>
             </div>
             <div id="bottomgroup">
                 <button onclick="removeItem();">Remove</button><br>

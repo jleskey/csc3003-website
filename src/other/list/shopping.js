@@ -46,15 +46,21 @@ function scrollUp() {
  * Adds a new item to the list.
  */
 function addItem() {
-    const input = document.querySelector('#addgroup input');
-    if (listContainer && input instanceof HTMLInputElement) {
-        const value = input.value.trim();
+    const input = document.querySelector('#addgroup select');
+    if (listContainer && input instanceof HTMLSelectElement) {
+        const value = input.value;
         if (value) {
             // Create a new item.
             const item = document.createElement('li');
             item.innerText = value;
 
+            // Create a category note.
+            const note = document.createElement('small');
+            const group = input.selectedOptions[0].parentElement.label;
+            note.innerText = ` (${group})`;
+
             // Add the item to the list.
+            item.append(note);
             listContainer.append(item);
 
             // Select it.
