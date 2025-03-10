@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Purchases</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script src="shopping.js"></script>
+    <meta charset="UTF-8">
+    <title>Purchases</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="shopping.js"></script>
 </head>
 
 <body onload="init();">
-  <div id="flexrow">
-    <div id="page">
-      <h2>Purchase Products/Services</h2>
-      <ul id="glist">
-        <li id="one">Product 1</li>
-        <li id="two">Product 2</li>
-        <li id="three">Product 3</li>
-        <li id="four">Product 4</li></ul>
-    </div>
-    <div id="controls">
-      <div id="topgroup">
-        <button onclick="moveFirst();">Move First</button><br>
-        <button onclick="scrollUp();">Scroll Up</button>
-      </div>
-      <div id="addgroup">
-        <button onclick="addItem();">Add Item</button>
-        <input type="text" size="30">
-      </div>
-      <div id="bottomgroup">
-        <button onclick="removeItem();">Remove</button><br>
-        <button onclick="scrollDown();">Scroll Down</button><br>
-        <button onclick="moveLast();">Move Last</button>
-      </div>
-    </div> <!-- controls -->
-  </div> <!-- flexrow -->
+    <div id="flexrow">
+        <div id="page">
+            <h2>Purchase Products/Services</h2>
+            <ul id="glist">
+                <li id="one">Product 1</li>
+                <li id="two">Product 2</li>
+                <li id="three">Product 3</li>
+                <li id="four">Product 4</li>
+            </ul>
+        </div>
+        <div id="controls">
+            <div id="topgroup">
+                <button onclick="moveFirst();">Move First</button><br>
+                <button onclick="scrollUp();">Scroll Up</button>
+            </div>
+            <div id="addgroup">
+                <button onclick="addItem();">Add Item</button>
+                <input type="text" size="30">
+            </div>
+            <div id="bottomgroup">
+                <button onclick="removeItem();">Remove</button><br>
+                <button onclick="scrollDown();">Scroll Down</button><br>
+                <button onclick="moveLast();">Move Last</button>
+            </div>
+        </div> <!-- controls -->
+    </div> <!-- flexrow -->
 </body>
+
 </html>
