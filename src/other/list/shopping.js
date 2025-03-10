@@ -1,16 +1,42 @@
-var currentItem; // refers to currently selected list item (<li> element)
+/**
+ * The currently selected list item
+ * @type {HTMLLIElement | undefined}
+ */
+let currentItem;
 
-/* init function is invoked when the body of page has completely loaded */
-function init() {
-    // assign all list items to the unselected class by default
-    var listItems = document.querySelectorAll('li');
-    var i;
-    for (i = 0; i < listItems.length; i++) {
-        listItems[i].className = 'unselected'; // change class to selected
+/**
+ * All list items
+ * @type {HTMLCollection | undefined}
+ */
+let listItems;
+
+// Initialize the shopping list.
+document.addEventListener('DOMContentLoaded', () => {
+    const listContainer = document.getElementById('glist');
+    if (listContainer) {
+        listItems = listContainer.getElementsByTagName('li');
+
+        // Initialize the list item styling.
+        for (const item of listItems) {
+            item.className = 'unselected';
+        }
+
+        // Select the last list item.
+        select(listItems.length - 1);
     }
+});
 
-    var glist = document.getElementById("glist");
-    // initialize currentItem to the last item and select it
-    currentItem = glist.lastChild;
-    currentItem.className = 'selected';
+/**
+ * Selects the given item.
+ * @param {number} index The index of the given item
+ */
+function select(index) {
+    const item = listItems && listItems[index];
+    if (item instanceof HTMLElement) {
+        if (currentItem) {
+            currentItem.className = 'unselected';
+        }
+        currentItem = item;
+        item.className = 'selected';
+    }
 }
