@@ -54,13 +54,15 @@ function addItem() {
             const item = document.createElement('li');
             item.innerText = value;
 
-            // Create a category note.
-            const note = document.createElement('small');
-            const group = input.selectedOptions[0].parentElement.label;
-            note.innerText = ` (${group})`;
+            // Create and append a category note, if applicable.
+            const optionGroup = input.selectedOptions[0].parentElement;
+            if (optionGroup instanceof HTMLOptGroupElement) {
+                const note = document.createElement('small');
+                note.innerText = ` (${optionGroup.label})`;
+                item.append(note);
+            }
 
             // Add the item to the list.
-            item.append(note);
             listContainer.append(item);
 
             // Select it.
