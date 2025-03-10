@@ -5,38 +5,111 @@
 let currentItem;
 
 /**
- * All list items
- * @type {HTMLCollection | undefined}
+ * The list container
+ * @type {HTMLElement | undefined}
  */
-let listItems;
+let listContainer;
 
 // Initialize the shopping list.
 document.addEventListener('DOMContentLoaded', () => {
-    const listContainer = document.getElementById('glist');
+    listContainer = document.getElementById('glist');
     if (listContainer) {
-        listItems = listContainer.getElementsByTagName('li');
-
         // Initialize the list item styling.
-        for (const item of listItems) {
+        for (const item of listContainer.children) {
             item.className = 'unselected';
         }
 
         // Select the last list item.
-        select(listItems.length - 1);
+        select(listContainer.lastElementChild);
     }
 });
 
 /**
- * Selects the given item.
- * @param {number} index The index of the given item
+ * Moves the selected list item to the start of the list.
  */
-function select(index) {
-    const item = listItems && listItems[index];
-    if (item instanceof HTMLElement) {
+function moveFirst() {
+    if (listContainer && currentItem) {
+        listContainer.prepend(currentItem);
+    }
+}
+
+/**
+ * Selects the previous list item.
+ */
+function scrollUp() {
+    if (currentItem && !select(currentItem.previousElementSibling)) {
+        alert('You are already at the top of the list.');
+    }
+}
+
+/**
+ * Adds a new item to the list.
+ */
+function addItem() {
+    const input = document.querySelector('#addgroup input');
+    if (listContainer && input instanceof HTMLInputElement) {
+        const value = input.value.trim();
+        if (value) {
+            // Create a new item.
+            const item = document.createElement('li');
+            item.innerText = value;
+
+            // Add the item to the list.
+            listContainer.append(item);
+
+            // Select it.
+            select(item);
+
+            // Reset the input value.
+            input.value = '';
+        }
+    }
+}
+
+
+/**
+ * Removes an item from the list.
+ */
+function removeItem() {
+    if (currentItem) {
+        const newSelection = (
+            currentItem.previousElementSibling ||
+            currentItem.nextElementSibling
+        );
+        currentItem.remove();
+        select(newSelection);
+    }
+}
+
+/**
+ * Selects the next list item.
+ */
+function scrollDown() {
+    if (currentItem && !select(currentItem.nextElementSibling)) {
+        alert('You are already at the bottom of the list.');
+    }
+}
+
+/**
+ * Moves the selected list item to the end of the list.
+ */
+function moveLast() {
+    if (listContainer && currentItem) {
+        listContainer.append(currentItem);
+    }
+}
+
+/**
+ * Selects an item by its index.
+ * @param {HTMLElement} item The item
+ */
+function select(item) {
+    if (item instanceof HTMLElement && item !== currentItem) {
         if (currentItem) {
             currentItem.className = 'unselected';
         }
         currentItem = item;
         item.className = 'selected';
+        return item;
     }
 }
