@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="../styles/main.css">
-    <link rel="stylesheet" href="../styles/slideshow.css">
-    <script src="../scripts/slideshow.js"></script>
+    <link rel="stylesheet" href="../styles/slideshow2.css">
+    <script src="../scripts/slideshow2.js"></script>
 </head>
 
 <body>
@@ -31,14 +31,12 @@
     <main>
         <header>
             <h1>Slideshow</h1>
-            <figure class="slideshow">
-                <img src="../assets/slideshow/code.png" alt="Vim in Use (Public Domain)">
-                <img src="../assets/slideshow/game.png" alt="A Game (Public Domain)">
-                <img src="../assets/slideshow/library.jpg" alt="A Library (Public Domain)">
-                <img src="../assets/slideshow/pen.jpeg" alt="A Red Pen (Public Domain)">
-                <figcaption></figcaption>
-            </figure>
         </header>
+        <figure id="slideshow" class="anim-odd">
+            <img id="slide">
+            <figcaption id="caption"></figcaption>
+        </figure>
+        <div id="thumbnails"></div>
     </main>
     <footer>
         Authorial Amenities

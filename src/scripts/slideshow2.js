@@ -1,38 +1,107 @@
-// array of image file names
-var pics = [ "image1.jpg", "image2.jpg",
-            "image3.jpg", "image4.jpg" ];
+'use strict';
 
-// array of corresponding Image objects
-var slides = [];
+const IMAGE_ROOT = '../assets/slideshow';
+const TIMEOUT = 3000;
 
-// current slide number index
-var index = 0;
+const images = {
+    'code.png': 'Vim in Use (Public Domain)',
+    'game.png': 'A Game (Public Domain)',
+    'library.jpg': 'A Library (Public Domain)',
+    'pen.jpeg': 'A Red Pen (Public Domain)',
+};
 
-// load an image from file, return Image object
-function loadImage(url)
-{
-  url = 'URL OF YOUR IMAGE DIRECTORY ON THE WEB SERVER' + url;
-  result = new Image();
-  result.src = url;
-  return result;
-}
+window.addEventListener('DOMContentLoaded', () => {
+    /** @type {HTMLImageElement[]} */
+    const imageCache = [];
 
-// preload all images from pics array,
-// into corresponding positions of slides array
-function loadSlides()
-{
-  // var i;
-  for (var i = 0; i < pics.length; i++)
-  {
-    slides.push(loadImage(pics[i]));
-  }
-  // display first slide
-  index = 0;
-  changeSlide();
-}
+    /** The current slide index */
+    let index = 0;
 
-// change slide that appears in display area
-function changeSlide()
-{
-  document.getElementById('display').src = slides[index].src;
-}
+    /** The number of ticks before normal slideshow operations can continue */
+    let delay = 0;
+
+    // HTML elements
+    const container = document.getElementById('slideshow');
+    const slide = document.getElementById('slide');
+    const caption = document.getElementById('caption');
+    const thumbnails = document.getElementById('thumbnails');
+
+    // Activate thumbnail functionality.
+    thumbnails.addEventListener('click', (event) => {
+        if (event.target instanceof HTMLImageElement) {
+            changeSlide(+event.target.dataset.index);
+            delay = 2;
+        }
+    });
+
+    // Preload all slide images.
+    loadSlides();
+
+    // Display first slide.
+    changeSlide(index);
+
+    // Start looping through slides.
+    setInterval(() => {
+        if (!delay) {
+            changeSlide((index + 1) % imageCache.length)
+        } else {
+            delay--;
+        }
+    }, TIMEOUT);
+
+    /**
+     * Displays the given slide.
+     */
+    function changeSlide(newIndex) {
+        const image = imageCache[newIndex];
+        if (image) {
+            index = newIndex;
+            slide.src = image.src;
+            slide.alt = image.alt;
+            caption.textContent = image.alt;
+
+            container.classList.toggle('anim-odd');
+            container.classList.toggle('anim-even');
+
+            selectThumbnail(index);
+        }
+    }
+
+    function selectThumbnail(index) {
+        const selector = `.thumbnail[data-index="${index}"]`;
+        const thumbnail = document.querySelector(selector);
+        if (thumbnail) {
+            document.querySelector('.thumbnail.on')?.classList.remove('on');
+            document.querySelector(selector)?.classList.add('on');
+        }
+    }
+
+    /**
+     * Preloads the images into the slides array.
+     */
+    function loadSlides() {
+        Object.entries(images).forEach(([filename, altText], i) => {
+            const image = loadImage(filename, altText);
+
+            imageCache.push(image);
+
+            image.classList.add('thumbnail');
+            image.dataset.index = i;
+            thumbnails.append(image);
+        });
+    }
+
+    /**
+     * Gets an image element from a filename.
+     *
+     * @param {string} filename The name of the image file
+     * @param {string} altText The alt text for the image
+     * @returns {HTMLImageElement}
+     */
+    function loadImage(filename, altText) {
+        let image = new Image();
+        image.src = `${IMAGE_ROOT}/${filename}`;
+        image.alt = altText;
+        return image;
+    }
+});
