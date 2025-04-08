@@ -4,6 +4,14 @@ $base = str_replace('/var/www/html', '', realpath(__DIR__ . '/..')) . '/';
 $prefix = $title ? "$title &bullet; " : "";
 $htmlClassList = $htmlClass ? " class=\"$htmlClass\"" : "";
 
+$aboutClass = $about ? ' class="active"' : '';
+
+function href($href, $title) {
+    $active = str_ends_with($_SERVER['REQUEST_URI'], $href);
+    $activeClass = $active ? ' class="active"' : '';
+    echo "<a href=\"$href\"$activeClass>$title</a>";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en"<?php echo $htmlClassList; ?>>

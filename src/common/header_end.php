@@ -5,16 +5,16 @@
         <img src="assets/logo.png" alt="Authorial Amenities">
         <nav>
             <ul>
-                <li><a href="main.php" class="active">Home</a></li>
+                <li><?php href('main.php', 'Home'); ?></li>
                 <li>
-                    <button>About</button>
+                    <?php echo "<button$aboutClass>About</button>"; ?>
                     <ul>
-                        <li><a href="pages/vision.php">Vision</a></li>
-                        <li><a href="pages/history.php">History</a></li>
+                        <li><?php href('pages/vision.php', 'Vision'); ?></li>
+                        <li><?php href('pages/history.php', 'History'); ?></a></li>
                     </ul>
                 </li>
-                <li><a href="pages/services.php">Our Services</a></li>
-                <li><a href="pages/other.php">Resources</a></li>
+                <li><?php href('pages/services.php', 'Our Services'); ?></li>
+                <li><?php href('pages/other.php', 'Resources'); ?></li>
             </ul>
         </nav>
     </header>

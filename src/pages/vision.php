@@ -1,4 +1,4 @@
-<?php $title = "Vision"; include('../common/header.php'); ?>
+<?php $title = "Vision"; $about = true; include('../common/header.php'); ?>
         <header>
             <h1>Our Vision</h1>
         </header>

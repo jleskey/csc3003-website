@@ -1,4 +1,4 @@
-<?php $title = "History"; include('../common/header.php'); ?>
+<?php $title = "History"; $about = true; include('../common/header.php'); ?>
         <header>
             <h1>Our Story</h1>
         </header>
