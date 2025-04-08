@@ -1,6 +1,6 @@
 <?php $title = "Fancy Slideshow"; include('../common/header_start.php'); ?>
-    <link rel="stylesheet" href="../styles/slideshow2.css">
-    <script src="../scripts/slideshow2.js"></script>
+    <link rel="stylesheet" href="styles/slideshow2.css">
+    <script src="scripts/slideshow2.js"></script>
 <?php include('../common/header_end.php'); ?>
         <header>
             <h1>Slideshow</h1>

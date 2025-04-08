@@ -1,6 +1,6 @@
 'use strict';
 
-const IMAGE_ROOT = '../assets/slideshow';
+const IMAGE_ROOT = 'assets/slideshow';
 const TIMEOUT = 3000;
 
 const images = {

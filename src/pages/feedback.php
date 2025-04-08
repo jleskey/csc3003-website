@@ -1,6 +1,6 @@
 <?php $title = "Feedback"; include('../common/header_start.php'); ?>
-    <script src="../scripts/validation.js" defer></script>
-    <script src="../scripts/feedback.js"></script>
+    <script src="scripts/validation.js" defer></script>
+    <script src="scripts/feedback.js"></script>
 <?php include('../common/header_end.php'); ?>
         <header>
             <h1>Leave us some feedback!</h1>

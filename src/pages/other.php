@@ -8,21 +8,21 @@
             </header>
             <ul>
                 <li>
-                    <a href="advantage.php">Lab 6: HTML Table</a>
+                    <a href="pages/advantage.php">Lab 6: HTML Table</a>
                 </li>
                 <li>
-                    <a href="feedback.php">Lab 7: HTML Form</a>
+                    <a href="pages/feedback.php">Lab 7: HTML Form</a>
                 </li>
                 <li>
-                    <a href="../external/shoppingList.html">
+                    <a href="external/list/shoppingList.html">
                         Lab 10: JavaScript Product Shopping List
                     </a>
                 </li>
                 <li>
-                    <a href="slideshow.php">Lab 11: JavaScript Slideshow</a>
+                    <a href="pages/slideshow.php">Lab 11: JavaScript Slideshow</a>
                 </li>
                 <li>
-                    <a href="slideshow2.php">Lab 12: Updated Slideshow</a>
+                    <a href="pages/slideshow2.php">Lab 12: Updated Slideshow</a>
                 </li>
             </ul>
         </section>
@@ -37,7 +37,7 @@
                 your specific use case.
                 <strong>
                     Learn more:
-                    <a href="advantage.html">Lab 6: HTML Table</a>.
+                    <a href="pages/advantage.php">Lab 6: HTML Table</a>.
                 </strong>
             </p>
         </section>
@@ -51,7 +51,7 @@
                 make our service better for everybody.
                 <strong>
                     Drop some feedback now:
-                    <a href="feedback.html">Lab 7: HTML Form</a>.
+                    <a href="pages/feedback.php">Lab 7: HTML Form</a>.
                 </strong>
             </p>
         </section>

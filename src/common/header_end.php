@@ -10,7 +10,7 @@
                     <?php echo "<button$aboutClass>About</button>"; ?>
                     <ul>
                         <li><?php href('pages/vision.php', 'Vision'); ?></li>
-                        <li><?php href('pages/history.php', 'History'); ?></a></li>
+                        <li><?php href('pages/history.php', 'History'); ?></li>
                     </ul>
                 </li>
                 <li><?php href('pages/services.php', 'Our Services'); ?></li>
