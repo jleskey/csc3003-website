@@ -2,7 +2,9 @@
 
 <body>
     <header>
-        <img src="assets/logo.png" alt="Authorial Amenities">
+        <a href="main.php">
+            <img src="assets/logo.png" alt="Authorial Amenities">
+        </a>
         <nav>
             <ul>
                 <li><?php href('main.php', 'Home'); ?></li>
