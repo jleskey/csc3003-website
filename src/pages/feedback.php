@@ -1,11 +1,11 @@
 <?php $title = "Feedback"; include('../common/header_start.php'); ?>
     <script src="scripts/validation.js" defer></script>
-    <script src="scripts/feedback.js"></script>
 <?php include('../common/header_end.php'); ?>
+<?php if (!$_POST['message']) { ?>
         <header>
             <h1>Leave us some feedback!</h1>
         </header>
-        <form>
+        <form action="" method="POST">
             <div class="field">
                 <label for="first">First Name</label>
                 <input id="first" name="first" placeholder="Jane" autofocus required autocomplete="given-name"
@@ -82,4 +82,16 @@
                 <input type="submit" value="Submit feedback">
             </div>
         </form>
+<?php } else { ?>
+<?php require('../services/feedback_mailer.php'); ?>
+        <header>
+            <h1>Thank you!</h1>
+        </header>
+        <p>
+            We appreciate you taking the time to share your feedback with us.
+            Below is posted a copy of the message we received.
+        </p>
+        <hr>
+        <blockquote><?php echo $messageToBusiness; ?></blockquote>
+<?php } ?>
 <?php include('../common/footer.php'); ?>
