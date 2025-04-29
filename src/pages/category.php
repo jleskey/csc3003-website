@@ -1,6 +1,7 @@
 <?php
 
 $title = 'Service List';
+$service = true;
 include '../common/header.php';
 
 $catalogPage = 'pages/catalog.php';

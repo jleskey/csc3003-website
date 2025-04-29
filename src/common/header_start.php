@@ -5,6 +5,7 @@ $prefix = $title ? "$title &bullet; " : "";
 $htmlClassList = $htmlClass ? " class=\"$htmlClass\"" : "";
 
 $aboutClass = $about ? ' class="active"' : '';
+$serviceClass = $service ? ' class="active"' : '';
 
 function href($href, $title) {
     $active = str_ends_with($_SERVER['REQUEST_URI'], $href);
