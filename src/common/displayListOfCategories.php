@@ -6,7 +6,10 @@ $categoryPage = "pages/category.php";
 
 $query = "SELECT category, COUNT(*) as count FROM Products GROUP BY category";
 $categories = mysqli_query($db, $query);
-$numRecords = mysqli_num_rows($categories);
+
+if (!$categories) {
+    die('No categories found.');
+}
 
 ?>
         <div class="h-scroll">
@@ -20,9 +23,10 @@ $numRecords = mysqli_num_rows($categories);
                 <tbody>
 <?php
 
-for ($i = 1; $i <= $numRecords; $i++) {
-    $row = mysqli_fetch_array($categories, MYSQLI_ASSOC);
-    $category = $row['category'] ?? "(no name)";
+while ($row = mysqli_fetch_array($categories, MYSQLI_ASSOC)) {
+    $category = !empty($row['category'])
+        ? htmlspecialchars($row['category'])
+        : "(no name)";
     $count = $row['count'] ?? 0; // should always have a value, but...
 
     $href = "$categoryPage?category=$category";
