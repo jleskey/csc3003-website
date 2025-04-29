@@ -200,3 +200,12 @@ caption {
 .h-scroll {
     overflow-x: auto;
 }
+
+.sm {
+    width: 100px;
+}
+
+.divider {
+    font-size: .7em;
+    vertical-align: middle;
+}
