@@ -20,8 +20,8 @@ $numRecords = mysqli_num_rows($categories);
 
 for ($i = 1; $i <= $numRecords; $i++) {
     $row = mysqli_fetch_array($categories, MYSQLI_ASSOC);
-    $category = $row['category'];
-    $count = $row['count'];
+    $category = $row['category'] ?? "(no name)";
+    $count = $row['count'] ?? 0; // should always have a value, but...
 
     $href = "category.php?category=$category";
     $anchor = "<a href=\"$href\">$category</a>";
