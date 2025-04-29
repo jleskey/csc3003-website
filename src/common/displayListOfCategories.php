@@ -22,8 +22,10 @@ for ($i = 1; $i <= $numRecords; $i++) {
     $row = mysqli_fetch_array($categories, MYSQLI_ASSOC);
     $category = $row['category'];
     $count = $row['count'];
+
     $href = "category.php?category=$category";
-    $anchor = "<a href=\"$href\">$category</a>"
+    $anchor = "<a href=\"$href\">$category</a>";
+
 ?>
                     <tr>
                         <td><?php echo $anchor; ?></td>
