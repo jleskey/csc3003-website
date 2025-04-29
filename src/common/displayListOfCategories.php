@@ -2,6 +2,8 @@
 
 include_once "../services/connectToDatabase.php";
 
+$categoryPage = "pages/category.php";
+
 $query = "SELECT category, COUNT(*) as count FROM Products GROUP BY category";
 $categories = mysqli_query($db, $query);
 $numRecords = mysqli_num_rows($categories);
@@ -23,7 +25,7 @@ for ($i = 1; $i <= $numRecords; $i++) {
     $category = $row['category'] ?? "(no name)";
     $count = $row['count'] ?? 0; // should always have a value, but...
 
-    $href = "category.php?category=$category";
+    $href = "$categoryPage?category=$category";
     $anchor = "<a href=\"$href\">$category</a>";
 
 ?>
